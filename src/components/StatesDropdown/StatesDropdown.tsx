@@ -6,7 +6,10 @@ interface StatesDropdownProps {
   name: string;
 }
 
-const StatesDropdown: React.FC<StatesDropdownProps> = ({ onChange, name }) => {
+export const StatesDropdown: React.FC<StatesDropdownProps> = ({
+  onChange,
+  name,
+}) => {
   // Logique d'initialisation du menu déroulant des États
   return (
     <div>
@@ -21,5 +24,3 @@ const StatesDropdown: React.FC<StatesDropdownProps> = ({ onChange, name }) => {
     </div>
   );
 };
-
-export default StatesDropdown;

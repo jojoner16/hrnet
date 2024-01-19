@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CustomDatePicker from '../../components/DatePicker/DatePicker.tsx';
-import StatesDropdown from '../../components/StatesDropdown/StatesDropdown.tsx';
+import { CustomDatePicker } from '../../components/DatePicker/DatePicker.tsx';
+import { StatesDropdown } from '../../components/StatesDropdown/StatesDropdown.tsx';
+import { DepartmentsDropdown } from '../../components/DepartmentDropdown/DepartmentDropdown.tsx';
 import '../../styles/pages/CreateEmployee.css';
 
 const CreateEmployee = () => {
@@ -106,14 +107,7 @@ const CreateEmployee = () => {
             />
           </fieldset>
 
-          <label htmlFor="department">Department</label>
-          <input
-            type="text"
-            id="department"
-            name="department"
-            value={employee.department}
-            onChange={handleInputChange}
-          />
+          <DepartmentsDropdown onChange={handleInputChange} name="department" />
         </form>
         <button type="button" onClick={handleSaveEmployee}>
           Save
