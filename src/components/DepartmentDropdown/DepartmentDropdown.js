@@ -1,15 +1,7 @@
 import React from 'react';
 import departments from '../../data/departments.json';
 
-interface DepartmentsDropdownProps {
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  name: string;
-}
-
-export const DepartmentsDropdown: React.FC<DepartmentsDropdownProps> = ({
-  onChange,
-  name,
-}) => {
+const DepartmentsDropdown = ({ onChange, name }) => {
   return (
     <div>
       <label htmlFor={name}>Department</label>
@@ -23,3 +15,5 @@ export const DepartmentsDropdown: React.FC<DepartmentsDropdownProps> = ({
     </div>
   );
 };
+
+export default DepartmentsDropdown;

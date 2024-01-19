@@ -1,19 +1,11 @@
 import React from 'react';
 import states from '../../data/states.json';
 
-interface StatesDropdownProps {
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  name: string;
-}
-
-export const StatesDropdown: React.FC<StatesDropdownProps> = ({
-  onChange,
-  name,
-}) => {
+const StatesDropdown = ({ onChange, name }) => {
   // Logique d'initialisation du menu déroulant des États
   return (
     <div>
-      <label>State</label>
+      <label htmlFor={name}>State</label>
       <select title="Select a state" onChange={onChange} name={name}>
         {states.map((state) => (
           <option key={state.abbreviation} value={state.abbreviation}>
@@ -24,3 +16,5 @@ export const StatesDropdown: React.FC<StatesDropdownProps> = ({
     </div>
   );
 };
+
+export default StatesDropdown;

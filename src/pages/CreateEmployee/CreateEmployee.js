@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CustomDatePicker } from '../../components/DatePicker/DatePicker.tsx';
-import { StatesDropdown } from '../../components/StatesDropdown/StatesDropdown.tsx';
-import { DepartmentsDropdown } from '../../components/DepartmentDropdown/DepartmentDropdown.tsx';
+import CustomDatePicker from '../../components/DatePicker/DatePicker';
+import StatesDropdown from '../../components/StatesDropdown/StatesDropdown';
+import DepartmentsDropdown from '../../components/DepartmentDropdown/DepartmentDropdown';
 import '../../styles/pages/CreateEmployee.css';
 
 const CreateEmployee = () => {

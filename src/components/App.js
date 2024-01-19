@@ -5,8 +5,8 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import CreateEmployee from '../pages/CreateEmployee/CreateEmployee.tsx';
-import EmployeeList from '../pages/EmployeeList/EmployeeList.tsx';
+import CreateEmployee from '../pages/CreateEmployee/CreateEmployee';
+import EmployeeList from '../pages/EmployeeList/EmployeeList';
 
 const App = () => {
   return (
