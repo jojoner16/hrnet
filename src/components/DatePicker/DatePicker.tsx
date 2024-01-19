@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateInput } from 'grommet';
+import { Box, DateInput } from 'grommet';
 
 interface CustomDatePickerProps {
   label: string;
@@ -7,22 +7,27 @@ interface CustomDatePickerProps {
   onChange: (value: string) => void;
 }
 
-const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
+export const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
   label,
   value,
   onChange,
 }) => {
-  // Logique d'initialisation du sélecteur de date
+  const handleChange = (event: { value: string | string[] }) => {
+    const nextValue = Array.isArray(event.value) ? event.value[0] : event.value;
+    onChange(nextValue);
+  };
+
   return (
-    <div>
+    <Box>
       <label htmlFor="datepicker">{label}</label>
       <DateInput
-        format="mm/dd/yyyy"
-        value={new Date().toISOString()}
-        onChange={({ value }) => {}}
+        aria-label="datepicker"
+        name="datepicker"
+        id="datepicker"
+        format="dd/mm/yyyy"
+        value={value}
+        onChange={handleChange}
       />
-    </div>
+    </Box>
   );
 };
-
-export default CustomDatePicker;
